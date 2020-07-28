@@ -63,7 +63,7 @@ LINK FORMATTERS
 			var href = $(this).attr('href');
 			var target = $(this).attr('target');
 			if (href.startsWith('/') || href.startsWith('#')) {
-				
+				//do something
 			} else {
 				$(this).attr('target', '_blank');
 				//console.log('absolute link caught');
@@ -79,6 +79,15 @@ LINK FORMATTERS
 	********************************************/
 	$(document).ready(function(){
 		$('a[target="_blank"]').attr('rel','noopener');
+
+		$('a[target="_blank"]').each(function(){
+			var rel = $(this).attr('rel');
+			if (href.startsWith('/') || href.startsWith('#')) {
+				//do something
+			} else {
+				$(this).attr('rel','noopener');
+			}
+		})
 	});
 
 
@@ -127,7 +136,7 @@ UNIVERSAL KEYBOARD CLICK
 
 ********************************************/
 $(document).ready(function(){
-	//ESC Key Close
+	
 	var enter_key = 13;
 	var focused = $(':focus');
 
