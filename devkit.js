@@ -35,11 +35,14 @@ LINK FORMATTERS
 	********************************************/
 	$(document).ready(function(){
 
+		var HolyMountainDevKit = {};
+		HolyMountainDevKit.console_styling = "background-color: #282828; color: #33FF33; font-size: 16px; padding: 10px 15px;";
+
 		
 
 		$('a[tabindex]').each(function(){
 			$(this).addClass('--manual_tab_index');
-			console.log('%c Manual tab-index on page. You should double check it. Search for "--no_href_detected".', MyData.console_styling);
+			console.log('%c Manual tab-index on page. You should double check it. Search for "--no_href_detected".', HolyMountainDevKit.console_styling);
 		});
 
 		$('a:not(a[href])').each(function(){
@@ -104,11 +107,15 @@ IMAGE FORMATTERS
 			Also console.log's an alert with the 
 	********************************************/
 	$(document).ready(function(){
+
+		var HolyMountainDevKit = {};
+		HolyMountainDevKit.console_styling = "background-color: #282828; color: #33FF33; font-size: 16px; padding: 10px 15px;";
+
 		$('img:not(img[alt])').each(function(){
 			var img_src = $(this).attr('src');
 			$(this).attr('alt', '');
 			$(this).addClass('--alt_tag_fallback');
-			console.log('%c missing alt tag found - src: '+img_src+'. Search for "--alt_tag_fallback".', MyData.console_styling);
+			console.log('%c missing alt tag found - src: '+img_src+'. Search for "--alt_tag_fallback".', HolyMountainDevKit.console_styling);
 		});
 		
 	});
@@ -121,9 +128,13 @@ INLINE CSS SCANNER
 
 ********************************************/
 	$(document).ready(function(){
+
+		var HolyMountainDevKit = {};
+		HolyMountainDevKit.console_styling = "background-color: #282828; color: #33FF33; font-size: 16px; padding: 10px 15px;";
+		
 		$('[style]').each(function(){
 			$(this).addClass('--inline_css_detected');
-			console.log('%c Element with inline CSS found. Search for "--inline_css_detected".', MyData.console_styling);
+			console.log('%c Element with inline CSS found. Search for "--inline_css_detected".', HolyMountainDevKit.console_styling);
 
 		});
 		
