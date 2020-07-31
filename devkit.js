@@ -25,7 +25,7 @@ INITITALIZATION
 
 	HolyMountainDevKit.console_styling_2 = "\
 		background-color: #282828; \
-		color: #800080; \
+		color: #ff00ff; \
 		font-size: 14px; \
 		padding: 10px 15px;\
 	";
@@ -33,6 +33,10 @@ INITITALIZATION
 	$(document).ready(function(){
 		$.fn.hm_console_log = function(message) {
 				console.log('%c'+ message, HolyMountainDevKit.console_styling);
+		};
+
+		$.fn.hm_console_log_2 = function(message) {
+				console.log('%c'+ message, HolyMountainDevKit.console_styling_2);
 		};
 
 		var message = "Holy Mountain DevKit initialized.";

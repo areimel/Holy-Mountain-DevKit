@@ -99,7 +99,7 @@ $(document).ready(function() {
 
 					//console.log notification
 						var message = "Holy Mountain Analytics - GA Auto-Tagger - element tagged - category: "+category;
-						$('html').hm_console_log(message);
+						$('html').hm_console_log_2(message);
 					//label grabber
 						if($(this).children().is('img')){
 							var label = $(this).attr('alt');
