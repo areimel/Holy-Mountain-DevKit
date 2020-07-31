@@ -1,10 +1,42 @@
 /********************************************
 *********************************************
 
-Holy Mountain | Dev Enhancement Kit
+Holy Mountain | DevKit
+
+
+
+
+		  ....
+	   ,od88888bo.
+	 ,d88888888888b
+	,dP""'   `"Y888b       ,.
+	d'         `"Y88b     .d8b. ,
+	'            `Y88[  , `Y8P' db
+	              `88b  Ybo,`',d88)
+	               ]88[ `Y888888P"
+	              ,888)  `Y8888P'
+	             ,d888[    `""'
+	          .od8888P          ...
+	     ..od88888888bo,      .d888b
+	          `""Y888888bo. .d888888b
+	.             `Y88b"Y88888P"' `Y8b
+	:.             `Y88[ `"""'     `88[
+	|b              |88b            Y8b.
+	`8[             :888[ ,         :88)
+	 Yb             :888) `b.       d8P'
+	 `8b.          ,d888[  `Ybo.  .d88[
+	  Y8b.        .dWARP'   `Y8888888P
+	  `Y88bo.  .od8888P'      "YWARP'
+	   `"Y8888888888P"'         `"'
+	      `"Y8888P""'
+	         `""'      
+
+
+
 
 *********************************************
 ********************************************/
+
 
 
 /********************************************
@@ -58,10 +90,6 @@ LINK FORMATTERS
 	********************************************/
 	$(document).ready(function(){
 
-		
-
-		
-
 		$('a[tabindex]').each(function(){
 			$(this).addClass('--HM_manual_tab_index');
 			var message = "Manual tab-index on page. You should double check it. Search for '--HM_manual_tab_index'.";
@@ -113,7 +141,7 @@ LINK FORMATTERS
 			} else {
 				$(this).attr('rel','noopener');
 			}
-		})
+		});
 	});
 
 

@@ -21,5 +21,5 @@ GA AUTO-TAGGER
 		$('footer a').autotagger(category, action, value);
 	
 	/***** INITIALIZE *****/
-		$('html').eventfire_ready();
+		$('html').eventfire_init();
 });
