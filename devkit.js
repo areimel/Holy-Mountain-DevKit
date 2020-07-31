@@ -14,12 +14,31 @@ INITITALIZATION
 		clicks, and custom console styling.
 
 ********************************************/
-var HolyMountainDevKit = {};
-HolyMountainDevKit.console_styling = "background-color: #282828; color: #33FF33; font-size: 16px; padding: 10px 15px;";
+	var HolyMountainDevKit = {};
+	
+	HolyMountainDevKit.console_styling = "\
+		background-color: #282828; \
+		color: #33FF33; \
+		font-size: 14px; \
+		padding: 10px 15px;\
+	";
 
-$(document).ready(function(){
-	console.log('%c'+ 'Holy Mountain dev enhancement kit initializied.', HolyMountainDevKit.console_styling);
-});
+	HolyMountainDevKit.console_styling_2 = "\
+		background-color: #282828; \
+		color: #800080; \
+		font-size: 14px; \
+		padding: 10px 15px;\
+	";
+
+	$(document).ready(function(){
+		$.fn.hm_console_log = function(message) {
+				console.log('%c'+ message, HolyMountainDevKit.console_styling);
+		};
+
+		var message = "Holy Mountain DevKit initialized.";
+		$('html').hm_console_log(message);
+
+	});
 
 
 
@@ -35,14 +54,14 @@ LINK FORMATTERS
 	********************************************/
 	$(document).ready(function(){
 
-		var HolyMountainDevKit = {};
-		HolyMountainDevKit.console_styling = "background-color: #282828; color: #33FF33; font-size: 16px; padding: 10px 15px;";
+		
 
 		
 
 		$('a[tabindex]').each(function(){
-			$(this).addClass('--manual_tab_index');
-			console.log('%c Manual tab-index on page. You should double check it. Search for "--no_href_detected".', HolyMountainDevKit.console_styling);
+			$(this).addClass('--HM_manual_tab_index');
+			var message = "Manual tab-index on page. You should double check it. Search for '--HM_manual_tab_index'.";
+			$('html').hm_console_log(message);
 		});
 
 		$('a:not(a[href])').each(function(){
@@ -104,12 +123,11 @@ IMAGE FORMATTERS
 	/********************************************
 	ALT TAG FALLBACK
 		- 	Inserts empty ALT tags on imgs that are missing them altogether.
-			Also console.log's an alert with the 
+			Also console.log's an alert with the class to search for.
 	********************************************/
 	$(document).ready(function(){
 
-		var HolyMountainDevKit = {};
-		HolyMountainDevKit.console_styling = "background-color: #282828; color: #33FF33; font-size: 16px; padding: 10px 15px;";
+		
 
 		$('img:not(img[alt])').each(function(){
 			var img_src = $(this).attr('src');
@@ -129,8 +147,7 @@ INLINE CSS SCANNER
 ********************************************/
 	$(document).ready(function(){
 
-		var HolyMountainDevKit = {};
-		HolyMountainDevKit.console_styling = "background-color: #282828; color: #33FF33; font-size: 16px; padding: 10px 15px;";
+		
 		
 		$('[style]').each(function(){
 			$(this).addClass('--inline_css_detected');

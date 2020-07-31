@@ -44,7 +44,8 @@ $(document).ready(function(){
 
 	$.fn.eventfire_ready = function(){
 
-		console.log("Event Firing primed");
+		var message = "Holy Mountain Anayltics - event firing primed";
+		$('html').hm_console_log(message);
 
 		$("[data-event='GAEvent']").click(function() {
 				var evCat = $(this).attr('data-category') 	? $(this).attr('data-category') : '',
@@ -62,10 +63,13 @@ $(document).ready(function(){
 							'eventLabel': evLab,
 							'eventValue': evVal,
 						});
-						console.log("GA Event fired - Event Category: ["+evCat+"], Event Label: ["+evLab+"], Event Action: ["+evAct+"]");
+						
+						var message = "Holy Mountain Analytics - GA Event fired - Event Category: ["+evCat+"], Event Label: ["+evLab+"], Event Action: ["+evAct+"]";
+						$('html').hm_console_log(message);
 
 					} catch (e) {
-						console.log("GA Event Error");
+						var message = "GA Event Error";
+						$('html').hm_console_log(message);
 					}
 			});
 
@@ -82,7 +86,8 @@ GA AUTO-TAGGER - PLUGIN VERSION
 
 $(document).ready(function() {
 
-	console.log('Holy Mountain Analytics Initiated');
+	var message = "Holy Mountain Analytics initialized";
+	$('html').hm_console_log(message);
 
 	/***** PLUGIN FUNCTION - targets specific elements *****/
 		$.fn.autotagger = function(category, action, value) {
@@ -93,7 +98,8 @@ $(document).ready(function() {
 				} else {
 
 					//console.log notification
-						console.log('GA Auto-Tagger - element tagged - category: '+category);
+						var message = "Holy Mountain Analytics - GA Auto-Tagger - element tagged - category: "+category;
+						$('html').hm_console_log(message);
 					//label grabber
 						if($(this).children().is('img')){
 							var label = $(this).attr('alt');
