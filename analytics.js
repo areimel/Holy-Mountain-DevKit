@@ -8,11 +8,20 @@ Holy Mountain | Analytics
 
 
 
+/********************************************
+
+INITIALIZATION
+
+********************************************/
+$(document).ready(function() {
+
+	var message = "---Holy Mountain Analytics initialized.---";
+	$('html').hm_console_log(message);
+});
 
 
 
 /********************************************
-*********************************************
 
 GA EVENTS - MAIN 
 
@@ -25,15 +34,11 @@ data-event="GAEvent" data-category="Home" data-label="CTA" data-action="Click" d
 	The below codes then grabs the data attributes you've set,
 	and pipes it through GTM and GA
 
-*********************************************
 ********************************************/
 $(document).ready(function(){
 
 
 	$.fn.eventfire_init = function(){
-
-		var message = "Holy Mountain Anayltics - event firing primed";
-		$('html').hm_console_log(message);
 
 		$("[data-event='GAEvent']").click(function() {
 				var evCat = $(this).attr('data-category') 	? $(this).attr('data-category') : '',
@@ -74,8 +79,6 @@ GA AUTO-TAGGER - PLUGIN VERSION
 
 $(document).ready(function() {
 
-	var message = "Holy Mountain Analytics initialized";
-	$('html').hm_console_log(message);
 
 	/***** PLUGIN FUNCTION - targets specific elements *****/
 		$.fn.autotagger = function(category, action, value) {

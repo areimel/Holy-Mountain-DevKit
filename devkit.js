@@ -71,7 +71,7 @@ INITITALIZATION
 				console.log('%c'+ message, HolyMountainDevKit.console_styling_2);
 		};
 
-		var message = "Holy Mountain DevKit initialized.";
+		var message = "---Holy Mountain DevKit initialized.---";
 		$('html').hm_console_log(message);
 
 	});
@@ -91,8 +91,8 @@ LINK FORMATTERS
 	$(document).ready(function(){
 
 		$('a[tabindex]').each(function(){
-			$(this).addClass('--HM_manual_tab_index');
-			var message = "Manual tab-index on page. You should double check it. Search for '--HM_manual_tab_index'.";
+			$(this).addClass('--hm_manual_tab_index');
+			var message = "Manual tab-index on page. You should double check it. Search for '--hm_manual_tab_index'.";
 			$('html').hm_console_log(message);
 		});
 
@@ -164,10 +164,62 @@ IMAGE FORMATTERS
 		$('img:not(img[alt])').each(function(){
 			var img_src = $(this).attr('src');
 			$(this).attr('alt', '');
-			$(this).addClass('--alt_tag_fallback');
-			console.log('%c missing alt tag found - src: '+img_src+'. Search for "--alt_tag_fallback".', HolyMountainDevKit.console_styling);
+			$(this).addClass('--hm_alt_tag_missing');
+			
+			var message = 'Missing alt tag found - src: '+img_src+'. Search for "--hm_alt_tag_missing".';
+			$('html').hm_console_log(message);
 		});
 		
+	});
+
+
+/********************************************
+
+Insecure Content Checker
+
+	- Scans page for <img> elements and elements with inline CSS, 
+	then console logs and adds a class to anything 
+
+********************************************/
+	$(document).ready(function(){
+
+				
+		$('img').each(function(){
+			var img_src = $(this).attr('src');
+			if(img_src.indexOf("https") >= 0 || img_src.indexOf("data:image") >= 0){
+				//do nothing
+			}else{
+				$(this).addClass("--hm_insecure_content_error");
+				
+				var message = "Insecure content found: img element, src='"+img_src+"'";
+				$('html').hm_console_log(message);
+			}
+		});
+
+		$('[style]').each(function(){
+			var img_src = $(this).css('background-image');
+			if(img_src == '' || img_src.indexOf("https") >= 0 || img_src.indexOf("data:image") >= 0){
+				//do nothing
+			}else{
+				$(this).addClass("--hm_insecure_content_error");
+
+				var message = "Insecure content found: css image element, src='"+img_src+"'";
+				$('html').hm_console_log(message);
+			}
+		});
+
+		$('iframe').each(function(){
+			var iframe_src = $(this).attr('src');
+			if(iframe_src.indexOf("https") >= 0){
+				//do nothing
+			}else{
+				$(this).addClass("--hm_insecure_content_error");
+
+				var message = "Insecure content found: iframe element, src='"+iframe_src+"'";
+				$('html').hm_console_log(message);
+			}
+		});
+
 	});
 
 
@@ -177,6 +229,7 @@ IMAGE FORMATTERS
 INLINE CSS SCANNER
 
 ********************************************/
+/*
 	$(document).ready(function(){
 
 		
@@ -185,25 +238,12 @@ INLINE CSS SCANNER
 			$(this).addClass('--inline_css_detected');
 			console.log('%c Element with inline CSS found. Search for "--inline_css_detected".', HolyMountainDevKit.console_styling);
 
+			var message = "Element with inline CSS found. Search for '--inline_css_detected'.";
+			$('html').hm_console_log(message);
+
 		});
 		
 	});
+*/
 
 
-/********************************************
-
-UNIVERSAL KEYBOARD CLICK
-
-********************************************/
-$(document).ready(function(){
-	
-	var enter_key = 13;
-	var focused = $(':focus');
-
-	$(document).keyup(function(e) {
-	  if (e.keyCode == enter_key){
-	  	e.preventDefault();
-	  	$(focused).click();
-	  }
-	});
-});
