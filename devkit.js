@@ -191,7 +191,7 @@ Insecure Content Checker
 			}else{
 				$(this).addClass("--hm_insecure_content_error");
 				
-				var message = "Insecure content found: img element, src='"+img_src+"'";
+				var message = "Insecure content found: img element, src='"+img_src+"'.  Search for '--hm_insecure_content_error'.";
 				$('html').hm_console_log(message);
 			}
 		});
