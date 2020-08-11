@@ -31,12 +31,12 @@ $(document).ready(function(){
 	//title tag check
 		if ($("title").length) {
 			
-			var message = "HTML [title] Meta missing";
+			var message = 'HTML [title] Meta missing';
 			$('html').hm_console_log(message);
 
 		}else{
 			
-			var message = "HTML [title] Meta missing";
+			var message = 'HTML [title] Meta missing';
 			$('html').hm_console_log(message);
 
 		}
@@ -46,12 +46,12 @@ $(document).ready(function(){
 			//do nothing
 		}else if ($("meta[name='description']").attr("description") == "" ) {
 			
-			var message = "HTML [description] meta missing";
+			var message = 'HTML [description] meta missing';
 			$('html').hm_console_log(message);
 
 		}else{
 			
-			var message = "HTML [description] meta missing";
+			var message = 'HTML [description] meta missing';
 			$('html').hm_console_log(message);
 
 		}

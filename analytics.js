@@ -15,8 +15,24 @@ INITIALIZATION
 ********************************************/
 $(document).ready(function() {
 
-	var message = "---Holy Mountain Analytics initialized.---";
+	var message = '---Holy Mountain Analytics initialized.---';
 	$('html').hm_console_log(message);
+
+	var gtm_detect = 0;
+	$('script').each(function() {
+		if($(this).text("https://www.googletagmanager.com/gtm.js?id=")){
+			gtm_detect = 1;
+			return false;
+		}
+	});
+
+	if(gtm_detect == 1){
+		var message = 'GTM script detected.';
+		$('html').hm_console_log(message);
+	} else {
+		var message = 'No GTM script detected.  Double check GTM installation.';
+		$('html').hm_console_log(message);
+	}
 });
 
 
@@ -41,30 +57,30 @@ $(document).ready(function(){
 	$.fn.eventfire_init = function(){
 
 		$("[data-event='GAEvent']").click(function() {
-				var evCat = $(this).attr('data-category') 	? $(this).attr('data-category') : '',
-					evAct = $(this).attr('data-action') 	? $(this).attr('data-action') : '',
-					evLab = $(this).attr('data-label') 		? $(this).attr('data-label') : '',
-					evVal = $(this).attr('data-value') 		? $(this).attr('data-value') : '';
+			var evCat = $(this).attr('data-category') 	? $(this).attr('data-category') : '',
+				evAct = $(this).attr('data-action') 	? $(this).attr('data-action') : '',
+				evLab = $(this).attr('data-label') 		? $(this).attr('data-label') : '',
+				evVal = $(this).attr('data-value') 		? $(this).attr('data-value') : '';
 
-					try {
+				try {
 
-						window.dataLayer = window.dataLayer || [];
-						dataLayer.push({
-							'event': 'GAEvent',
-							'eventCategory': evCat,
-							'eventAction': evAct,
-							'eventLabel': evLab,
-							'eventValue': evVal,
-						});
-						
-						var message = "Holy Mountain Analytics - GA Event fired - Event Category: ["+evCat+"], Event Label: ["+evLab+"], Event Action: ["+evAct+"]";
-						$('html').hm_console_log(message);
+					window.dataLayer = window.dataLayer || [];
+					dataLayer.push({
+						'event': 'GAEvent',
+						'eventCategory': evCat,
+						'eventAction': evAct,
+						'eventLabel': evLab,
+						'eventValue': evVal,
+					});
+					
+					var message = 'Holy Mountain Analytics - GA Event fired - Event Category: ['+evCat+'], Event Label: ['+evLab+'], Event Action: ['+evAct+']';
+					$('html').hm_console_log(message);
 
-					} catch (e) {
-						var message = "GA Event Error";
-						$('html').hm_console_log(message);
-					}
-			});
+				} catch (e) {
+					var message = 'GA Event Error';
+					$('html').hm_console_log(message);
+				}
+		});
 
 	};
 
@@ -89,7 +105,7 @@ $(document).ready(function() {
 				} else {
 
 					//console.log notification
-						var message = "Holy Mountain Analytics - GA Auto-Tagger - element tagged - category: "+category;
+						var message = 'Holy Mountain Analytics - GA Auto-Tagger - element tagged - category: '+category;
 						$('html').hm_console_log_2(message);
 					//label grabber
 						if($(this).children().is('img')){
