@@ -8,6 +8,8 @@ Load the DevKit script first, and then add each of the additional scripts you wi
 
 ### Prerequisites
 
+##Ver 0.81
+
 jQuery is required.
 
 ### Installing
