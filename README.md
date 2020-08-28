@@ -10,7 +10,7 @@ Load the DevKit script first, and then add each of the additional scripts you wi
 
 ##Ver 0.81
 
-jQuery is required.
+jQuery is required.  A future version will automatically detect if you have it installed and load it in if you don't have it.
 
 ### Installing
 
@@ -30,14 +30,6 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
