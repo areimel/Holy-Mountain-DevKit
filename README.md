@@ -37,7 +37,6 @@ End with an example of getting some data out of the system or using it for a lit
 
 * **Alec Reimel** - [Portfolio](https://alecreimel.com/)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
