@@ -1,18 +1,14 @@
-# Project Title
+# Holy Mountain Dev Enhancement Suite
 
-One Paragraph of project description goes here
+The Holy Mountain plugin set is meant to elevate and enhance the development process.  By automating select features and alerting the dev to errors in the code, it helps enforce best practices
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Load the DevKit script first, and then add each of the additional scripts you wish to use.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+jQuery is required.
 
 ### Installing
 
