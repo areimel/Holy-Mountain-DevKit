@@ -1,5 +1,7 @@
 # Holy Mountain Dev Enhancement Suite
 
+##Ver 0.81
+
 The Holy Mountain plugin set is meant to elevate and enhance the development process.  By automating select features and alerting the dev to errors in the code, it helps enforce best practices and keeps the developer focused on their main task.  
 
 ## Getting Started
@@ -8,7 +10,7 @@ Load the DevKit script first, and then add each of the additional scripts you wi
 
 ### Prerequisites
 
-##Ver 0.81
+
 
 jQuery is required.  A future version will automatically detect if you have it installed and load it in if you don't have it.
 
