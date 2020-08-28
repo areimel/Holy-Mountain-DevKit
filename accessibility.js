@@ -28,7 +28,7 @@ META TAGS CHECK
 $(document).ready(function(){
 	
 
-	//title tag check
+	/***** TITLE TAG CHECK *****/
 		if ($("title").length) {
 			
 			var message = 'HTML [title] Meta missing';
@@ -41,7 +41,7 @@ $(document).ready(function(){
 
 		}
 
-	//description tag check
+	/***** DESCRIPTION TAG CHECK *****/
 		if ($("meta[name='description']").length ){
 			//do nothing
 		}else if ($("meta[name='description']").attr("description") == "" ) {
@@ -56,7 +56,7 @@ $(document).ready(function(){
 
 		}
 
-	//charset tag check
+	/***** CHARSET TAG CHECK *****/
 		if ($("meta[charset]").length ){
 			//do nothing
 		}else if ($("meta[name='charset']").attr("charset") == "" ) {
@@ -76,7 +76,7 @@ $(document).ready(function(){
 
 		}
 
-	//viewport tag check
+	/***** VIEWPORT TAG CHECK *****/
 		if ($("meta[name='viewport']").attr("content") != "width=device-width,initial-scale=1") {
 			
 			var message = "HTML [viewport] meta missing";
@@ -86,7 +86,7 @@ $(document).ready(function(){
 			//do nothing
 		}
 
-	//lang tag check
+	/***** LANG ATTRIBUTE CHECK *****/
 		if ($("html").has().attr("lang") ){
 			//do nothing
 		}else if ($("html").attr("lang") == "" ) {
@@ -113,7 +113,7 @@ FORM FIELDS CHECK
 $(document).ready(function(){
 	
 
-	//form attributes check
+	/***** FORM ATTRIBUTES CHECK *****/
 		if ($("form").length) {
 			$("form").each(function(){
 			
@@ -150,11 +150,11 @@ $(document).ready(function(){
 
 		}
 
-	//input attribute check
+	/***** INPUT ATTRIBUTE CHECK *****/
 		if ($("input").length) {
 			$("input").each(function(){
 			
-				//method
+				//name
 					if ($(this).attr('name') != "") {
 						//do nothing
 					}else {
@@ -170,7 +170,7 @@ $(document).ready(function(){
 					}else {
 						$(this).addClass('--hm_form_id_missing');
 						
-						var message = 'Missing input ID found. Search for "--hm_form_id_missing".';
+						var message = 'Missing input ID found, likely missing label. Search for "--hm_form_id_missing".';
 						$('html').hm_console_log(message);
 					}
 			});
@@ -186,20 +186,16 @@ $(document).ready(function(){
 KEYBOARD CONTROLS
 
 ********************************************/
-var HolyMountain_keyboard = {};
 
-HolyMountain_keyboard.enter_key = 13;
-HolyMountain_keyboard.enter_key = 13;
+	/***** KEYBOARD CLICK/ENTER KEY *****/
+		$(document).ready(function(){
+			
+			var focused = $(':focus');
 
-/***** Keyboard click/enter *****/
-	$(document).ready(function(){
-		
-		var focused = $(':focus');
-
-		$(document).keyup(function(e) {
-		  if (e.keyCode == HolyMountain_keyboard.enter_key){
-		  	e.preventDefault();
-		  	$(focused).click();
-		  }
+			$(document).keyup(function(e) {
+			  if (e.keyCode == HolyMountain_keyboard.enter_key){
+			  	e.preventDefault();
+			  	$(focused).click();
+			  }
+			});
 		});
-	});

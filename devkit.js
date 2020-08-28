@@ -3,35 +3,17 @@
 
 Holy Mountain | DevKit
 
+NOTES:
+	-	This is the main/base file for the Holy Mountain plugin suite.
+		This file should always be included when using this group of plugins, 
+		as it includes core functionality.
 
-
-
-		  ....
-	   ,od88888bo.
-	 ,d88888888888b
-	,dP""'   `"Y888b       ,.
-	d'         `"Y88b     .d8b. ,
-	'            `Y88[  , `Y8P' db
-	              `88b  Ybo,`',d88)
-	               ]88[ `Y888888P"
-	              ,888)  `Y8888P'
-	             ,d888[    `""'
-	          .od8888P          ...
-	     ..od88888888bo,      .d888b
-	          `""Y888888bo. .d888888b
-	.             `Y88b"Y88888P"' `Y8b
-	:.             `Y88[ `"""'     `88[
-	|b              |88b            Y8b.
-	`8[             :888[ ,         :88)
-	 Yb             :888) `b.       d8P'
-	 `8b.          ,d888[  `Ybo.  .d88[
-	  Y8b.        .dWARP'   `Y8888888P
-	  `Y88bo.  .od8888P'      "YWARP'
-	   `"Y8888888888P"'         `"'
-	      `"Y8888P""'
-	         `""'      
-
-
+CONTENTS:
+	-	INITITALIZATION
+	-	LINK FORMATTERS
+	-	IMAGE FORMATTERS
+	-	INSECURE CONTENT CHECKER
+	-	INLINE CSS SCANNER (WIP)
 
 
 *********************************************
@@ -46,35 +28,45 @@ INITITALIZATION
 		clicks, and custom console styling.
 
 ********************************************/
-	var HolyMountainDevKit = {};
 	
-	HolyMountainDevKit.console_styling = "\
-		background-color: #282828; \
-		color: #33FF33; \
-		font-size: 14px; \
-		padding: 10px 15px;\
-	";
+	/***** CONSOLE STYLING *****/
 
-	HolyMountainDevKit.console_styling_2 = "\
-		background-color: #282828; \
-		color: #ff00ff; \
-		font-size: 14px; \
-		padding: 10px 15px;\
-	";
+		//Set vars
+			var HolyMountainDevKit = {};
+			
+			HolyMountainDevKit.console_styling = "\
+				background-color: #282828; \
+				color: #33FF33; \
+				font-size: 14px; \
+				padding: 10px 15px;\
+			";
 
-	$(document).ready(function(){
-		$.fn.hm_console_log = function(message) {
-				console.log('%c'+ message, HolyMountainDevKit.console_styling);
-		};
+			HolyMountainDevKit.console_styling_2 = "\
+				background-color: #282828; \
+				color: #ff00ff; \
+				font-size: 14px; \
+				padding: 10px 15px;\
+			";
 
-		$.fn.hm_console_log_2 = function(message) {
-				console.log('%c'+ message, HolyMountainDevKit.console_styling_2);
-		};
+		//Set functions
+			$(document).ready(function(){
+				$.fn.hm_console_log = function(message) {
+						console.log('%c'+ message, HolyMountainDevKit.console_styling);
+				};
 
-		var message = "---Holy Mountain DevKit initialized.---";
-		$('html').hm_console_log(message);
+				$.fn.hm_console_log_2 = function(message) {
+						console.log('%c'+ message, HolyMountainDevKit.console_styling_2);
+				};
 
-	});
+				var message = "---Holy Mountain DevKit initialized.---";
+				$('html').hm_console_log(message);
+
+			});
+
+	/***** KEYSTROKES *****/
+		var HolyMountain_keyboard = {};
+
+		HolyMountain_keyboard.enter_key = 13;
 
 
 
@@ -175,7 +167,7 @@ IMAGE FORMATTERS
 
 /********************************************
 
-Insecure Content Checker
+INSECURE CONTENT CHECKER
 
 	- Scans page for <img> elements and elements with inline CSS, 
 	then console logs and adds a class to anything 
