@@ -10,7 +10,7 @@ The philosophy behind the Holy Mountain plugins is simple: everything should be 
 
 Load the DevKit script first, and then add each of the additional scripts you wish to use.
 
-This current version can easily be linked to via [raw.githack.com]<https://raw.githack.com/>, or downloaded and referenced locally.  Once in the production phase, these plugins will be available on popular Javascript CDNs.
+This current version can easily be linked to via <https://raw.githack.com/>, or downloaded and referenced locally.  Once in the production phase, these plugins will be available on popular Javascript CDNs.
 
 ### Prerequisites
 
