@@ -51,11 +51,11 @@ INITITALIZATION
 		//Set functions
 			$(document).ready(function(){
 				$.fn.hm_console_log = function(message) {
-						console.log('%c'+ message, HolyMountainDevKit.console_styling);
+					console.log('%c'+ message, HolyMountainDevKit.console_styling);
 				};
 
 				$.fn.hm_console_log_2 = function(message) {
-						console.log('%c'+ message, HolyMountainDevKit.console_styling_2);
+					console.log('%c'+ message, HolyMountainDevKit.console_styling_2);
 				};
 
 				var message = "---Holy Mountain DevKit initialized.---";
@@ -124,6 +124,7 @@ LINK FORMATTERS
 			and keeps resources freed up.  Works in conjunction with the TARGET code above.
 	********************************************/
 	$(document).ready(function(){
+		
 		$('a[target="_blank"]').attr('rel','noopener');
 
 		$('a[target="_blank"]').each(function(){
@@ -150,8 +151,6 @@ IMAGE FORMATTERS
 			Also console.log's an alert with the class to search for.
 	********************************************/
 	$(document).ready(function(){
-
-		
 
 		$('img:not(img[alt])').each(function(){
 			var img_src = $(this).attr('src');

@@ -3,6 +3,9 @@
 
 Holy Mountain | Analytics
 
+NOTES:
+	- 	This script will soon also be available as a stand-alone tool.  
+
 *********************************************
 ********************************************/
 
@@ -58,7 +61,7 @@ $(document).ready(function(){
 
 		$("[data-event='GAEvent']").click(function() {
 			var evCat = $(this).attr('data-category') 	? $(this).attr('data-category') : '',
-				evAct = $(this).attr('data-action') 	? $(this).attr('data-action') : '',
+				evAct = $(this).attr('data-action') 		? $(this).attr('data-action') : '',
 				evLab = $(this).attr('data-label') 		? $(this).attr('data-label') : '',
 				evVal = $(this).attr('data-value') 		? $(this).attr('data-value') : '';
 
