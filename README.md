@@ -1,4 +1,4 @@
-# Holy Mountain Dev Enhancement Suite
+# Holy Mountain DevKit
 
 ## Ver 0.81
 
