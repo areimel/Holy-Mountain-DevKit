@@ -14,7 +14,7 @@ INITITALIZATION
 
 ********************************************/
 $(document).ready(function(){
-	var message = "---Holy Mountain Accessibility initialized.---";
+	var message = "---Holy Mountain - Accessibility module loaded.---";
 	$('html').hm_console_log(message);
 });
 
@@ -30,10 +30,7 @@ $(document).ready(function(){
 
 	/***** TITLE TAG CHECK *****/
 		if ($("title").length) {
-			
-			var message = 'HTML [title] Meta missing';
-			$('html').hm_console_log(message);
-
+			//do nothing
 		}else{
 			
 			var message = 'HTML [title] Meta missing';
@@ -77,23 +74,19 @@ $(document).ready(function(){
 		}
 
 	/***** VIEWPORT TAG CHECK *****/
-		if ($("meta[name='viewport']").attr("content") != "width=device-width,initial-scale=1") {
+		if ($("meta[name='viewport']").length) {
+			//do nothing
+		}else{
 			
 			var message = "HTML [viewport] meta missing";
 			$('html').hm_console_log(message);
-
-		}else{
-			//do nothing
 		}
 
 	/***** LANG ATTRIBUTE CHECK *****/
 		if ($("html").has().attr("lang") ){
 			//do nothing
-		}else if ($("html").attr("lang") == "" ) {
-			
-			var message = "HTML [lang] attribute missing";
-			$('html').hm_console_log(message);
-
+		}else if ($("html").attr("lang") != "" ) {
+			//do nothing
 		}else{
 			
 			var message = "HTML [lang] attribute missing";
@@ -199,3 +192,25 @@ KEYBOARD CONTROLS
 			  }
 			});
 		});
+
+
+
+
+/********************************************
+
+ALT TAG FALLBACK
+
+********************************************/
+
+$(document).ready(function(){
+
+	$('img:not(img[alt])').each(function(){
+		var img_src = $(this).attr('src');
+		$(this).attr('alt', '');
+		$(this).addClass('--hm_alt_tag_missing');
+		
+		var message = 'Missing alt tag found - src: '+img_src+'. Search for "--hm_alt_tag_missing".';
+		$('html').hm_console_log(message);
+	});
+	
+});

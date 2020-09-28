@@ -72,6 +72,18 @@ INITITALIZATION
 
 /********************************************
 
+MENU
+
+********************************************/
+	
+	/***** ICON *****/
+
+
+	/***** MODAL *****/
+
+
+/********************************************
+
 LINK FORMATTERS
 
 ********************************************/
@@ -139,29 +151,6 @@ LINK FORMATTERS
 
 
 
-/********************************************
-
-IMAGE FORMATTERS
-
-********************************************/
-
-	/********************************************
-	ALT TAG FALLBACK
-		- 	Inserts empty ALT tags on imgs that are missing them altogether.
-			Also console.log's an alert with the class to search for.
-	********************************************/
-	$(document).ready(function(){
-
-		$('img:not(img[alt])').each(function(){
-			var img_src = $(this).attr('src');
-			$(this).attr('alt', '');
-			$(this).addClass('--hm_alt_tag_missing');
-			
-			var message = 'Missing alt tag found - src: '+img_src+'. Search for "--hm_alt_tag_missing".';
-			$('html').hm_console_log(message);
-		});
-		
-	});
 
 
 /********************************************
