@@ -1,6 +1,6 @@
 # Holy Mountain DevKit
 
-## Ver 0.81
+## Beta Pre-Release
 
 The Holy Mountain plugin set is meant to elevate and enhance the development process.  By automating select features and alerting the dev to errors in the code, it helps enforce best practices and keeps the developer focused on their main task.  
 
