@@ -2,3 +2,16 @@ body{
 	overflow-x: hidden;
 	width: 100%;
 }
+
+
+
+
+/****************
+CONTRAST 
+****************/
+
+.contrast_test{
+	display: inline-block;
+	background-color: #000;
+	color: #666;
+}

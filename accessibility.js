@@ -307,38 +307,89 @@ BACKGROUND/COLOR CONTRAST
 		*/
 
 		$.fn.hm_contrast = function(
-				parent_base_background, 
+				parent_base_background,
 				parent_new_background, 
 				child_target, 
 				child_base_color,
 				child_new_color
 		) {
 			
+			console.log("contrast: initialized");
+
+			//Data formatting
+			parent_base_background 	= format_control(parent_base_background);
+			parent_new_background 		= format_control(parent_new_background);
+			child_base_color 			= format_control(child_base_color);
+			child_new_color 				= format_control(child_new_color);
+
+			
 			//Check if parent conditions are true
 			var parent_check = 0;
-			if( $("parent_target").length && $("parent_target").css("background-color") == "parent_background"){
+			if( $(this).length && $(this).css("background-color") == parent_base_background){
 				parent_check = 1;
+				console.log("contrast: parent check passed");
 			}else{
 				parent_check = 0;
+				console.log("contrast: parent check failed");
+				console.log($(this).css("background-color"));
 			}
 
 			//Check if child conditions are true
 			var child_check = 0;
-			if( $("child_target").length && $("child_target").css("color") == "child_color"){
+			if( $(this).children(child_target).length && $(this).children(child_target).css("color") == child_base_color){
 				child_check = 1;
+				console.log("contrast: child check passed");
 			}else{
 				child_check = 0;
+				console.log("contrast: child check failed");
+				console.log($(this).children(child_target).css("color"));
 			}
 
 			//Check if both checks are positive
 			if( parent_check == 1 && child_check == 1 ){
 				//update colors
-				$(parent_target).css("background-color", parent_new_background);
-				$(child_base_color).css("background-color", child_new_color);
+				$(this).css("background-color", parent_new_background);
+				$(this).children(child_target).css("color", child_new_color);
+				console.log("contrast: function success");
 			}else{
 				//do nothing
+				console.log("contrast: function fail");
 			}
 		};
+
+
+		//Formatting functions
+
+			//Format control function
+			function format_control(hex){
+				console.log("Format Control function started");
+				hex = remove_hash(hex);
+				hex = hexToRgb(hex);
+				console.log("Format Control function finished");
+				return(hex);
+			}
+
+			//Remove "#" from color values
+			function remove_hash(hex) {
+				hex = hex.replace('#', '');
+				return(hex);
+			}
+
+			// Hex to RGB - jQuery treats all colors as rgb() values
+			//$.fn.hexToRgb = function(hex) 
+			function hexToRgb(hex) {
+				var bigint = parseInt(hex, 16);
+				var r = (bigint >> 16) & 255;
+				var g = (bigint >> 8) & 255;
+				var b = bigint & 255;
+
+				//console.log("hext to rgb conversion successful");
+				//console.log("original: "+ hex);
+				//console.log("rgb(" + r + ", " + g + ", " + b + ")");
+				return "rgb(" + r + ", " + g + ", " + b + ")";
+			}
+
+		
 	});
 
 

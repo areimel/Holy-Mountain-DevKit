@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="description" content="test123">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="style.css">
 	
 </head>
 <body>
@@ -41,6 +43,14 @@
 				<a href="/test4">test4</a>
 			</li>
 		</ul>
+
+		<div class="contrast_test" id="contrast_test_1">
+			<p>lorum ipsum dolor</p>
+		</div>
+
+		<div class="contrast_test" id="contrast_test_2">
+			<p>lorum ipsum dolor</p>
+		</div>
 	</main>
 
 	<footer>
@@ -63,8 +73,31 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="devkit.js"></script>
-	<script type="text/javascript" src="analytics.js"></script>
 	<script type="text/javascript" src="accessibility.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+
+
+	<!-- JS FUNCTION CALLS -->
+		<script>
+			//Contrast adjustment
+			$(document).ready(function(){
+
+				//use full 6 digit hex codes
+				var parent_base_background 	= "#000000";
+				var parent_new_background 	= "#333333"; 
+				var child_target 					= "p";
+				var child_base_color				= "#666666";
+				var child_new_color				= "#ffffff";
+
+				$('#contrast_test_1').hm_contrast(
+					parent_base_background,
+					parent_new_background ,
+					child_target,
+					child_base_color,
+					child_new_color		
+				);
+			});
+		</script>
+
 </body>
 </html>
