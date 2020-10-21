@@ -204,6 +204,7 @@ ALT TAG FALLBACK
 
 $(document).ready(function(){
 
+	//Add empty alt tag to images without an alt tag
 	$('img:not(img[alt])').each(function(){
 		var img_src = $(this).attr('src');
 		$(this).attr('alt', '');
@@ -211,6 +212,11 @@ $(document).ready(function(){
 		
 		var message = 'Missing alt tag found - src: '+img_src+'. Search for "--hm_alt_tag_missing".';
 		$('html').hm_console_log(message);
+	});
+
+	//Corrects alt tags containing just a space
+	$('img[alt=" "])').each(function(){
+		$(this).attr("alt","");
 	});
 	
 });
