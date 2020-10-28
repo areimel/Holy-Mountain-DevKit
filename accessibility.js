@@ -204,6 +204,40 @@ ALT TAG FALLBACK
 
 $(document).ready(function(){
 
+	$('img[alt]').each(function(){
+		var img_src = $(this).attr("src");
+		var img_alt = $(this).attr("alt");
+
+		//If img src contains the alt text
+		if (img_src.toLowerCase().indexOf(img_alt) >= 0){
+			$(this).attr("alt","");
+			$(this).addClass('--hm_alt_tag_filename');
+			//console.log("alt tag filename success");
+		}
+
+		//if img alt tag contains file extension
+		if (img_alt.toLowerCase().indexOf(".jpg") >= 0
+		 	|| img_alt.toLowerCase().indexOf(".jpeg") >= 0
+			|| img_alt.toLowerCase().indexOf(".png") >= 0
+			|| img_alt.toLowerCase().indexOf(".gif") >= 0){
+			$(this).attr("alt","");
+			$(this).addClass('--hm_alt_tag_filename');
+			//console.log("alt tag filename success");
+		}
+
+		if (img_src.toLowerCase().indexOf("_") >= 0){
+			$(this).attr("alt","");
+			$(this).addClass('--hm_alt_tag_filename');
+			//console.log("alt tag filename success");
+		}
+
+		/*if (img_src.toLowerCase().indexOf("-") >= 0){
+			$(this).attr("alt","");
+			$(this).addClass('--hm_alt_tag_filename');
+			//console.log("alt tag filename success");
+		}*/
+	});
+
 	//Add empty alt tag to images without an alt tag
 	$('img:not(img[alt])').each(function(){
 		var img_src = $(this).attr('src');
@@ -218,6 +252,8 @@ $(document).ready(function(){
 	$('img[alt=" "])').each(function(){
 		$(this).attr("alt","");
 	});
+
+
 	
 });
 
