@@ -205,6 +205,8 @@ ALT TAG FALLBACK
 $(document).ready(function(){
 
 	$('img[alt]').each(function(){
+
+		//grab image vars
 		var img_src = $(this).attr("src");
 		var img_alt = $(this).attr("alt");
 
@@ -225,6 +227,7 @@ $(document).ready(function(){
 			//console.log("alt tag filename success");
 		}
 
+		//if img alt tag contains underscore
 		if (img_src.toLowerCase().indexOf("_") >= 0){
 			$(this).attr("alt","");
 			$(this).addClass('--hm_alt_tag_filename');
@@ -443,9 +446,10 @@ VISUAL-BASED TOOLS
 
 ********************************************/
 
-	/********************************************
-	MOBILE THUMB ZONE
-	********************************************/
+	
+/***** ================= *****/
+/***** MOBILE THUMB ZONE *****/
+/***** ================= *****/
 	$(document).ready(function(){
 
 		//HTML & CSS
