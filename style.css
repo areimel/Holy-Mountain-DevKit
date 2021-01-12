@@ -1,17 +1,187 @@
-body{
-	overflow-x: hidden;
-	width: 100%;
-}
+/******************************
+
+GENERAL
+
+******************************/
+
+
+	/***** Box-Size Reset - global border-box *****/
+		html {
+			box-sizing: border-box;
+		}
+		*, *:before, *:after {
+			box-sizing: inherit;
+		}
+
+
+	/***** CSS vars *****/
+		:root{
+			--white: 	#fafafa;
+			--black: 	#282828;
+			--grey: 	#353535;
+			--green:	#33FF33;
+			--amber:	#FFB000;
+
+			--primary_color: var(--black);
+			--background_color: var(--white);
+
+			--text_glow_green:	1px 0px 5px rgba(51, 255, 51, 0.5), -1px 0px 5px rgba(51, 255, 51, 0.5), 0px -1px 5px rgba(51, 255, 51, 0.5), 0px -1px 5px rgba(51, 255, 51, 0.5);
+		}
+
+
+	/***** HTML/Body *****/
+		html{
+			font-size: 10px;
+		}
+
+		body{
+			overflow-x: hidden;
+			max-width: 100%;
+			color: var(--primary_color);
+			font-family: monospace;
+			font-size: 1.8rem;
+		}
+
+
+	/***** <img> global *****/
+		img{
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+
+
+	/***** Lists Global *****/
+		ul{
+
+		}
+
+		li{
+			margin-bottom: 1em;
+		}
+
+
+	/***** NoList *****/
+		ul.nolist{
+			list-style: none;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			flex-direction: row;
+		}
+		ul.nolist>li{
+			padding:  0 10px;
+		}
+
+
+	/***** Links *****/
+		a{
+			color:inherit;
+			text-decoration: none;
+			border-bottom: 3px dotted;
+		}
+		a:hover{
+			border-bottom: 3px solid;
+		}
 
 
 
 
-/****************
-CONTRAST 
-****************/
 
-.contrast_test{
-	display: inline-block;
-	background-color: #000;
-	color: #666;
-}
+
+
+/******************************
+
+DEMO STYLING
+
+******************************/
+	/***** Body *****/
+		body{
+			padding:50px;
+			background-color: #eaeaea;
+		}
+
+		.body_inner{
+			box-shadow:
+				0 2.8px 2.8px rgba(0, 0, 0, 0.056),
+				0 6.7px 6.7px rgba(0, 0, 0, 0.081),
+				0 12.5px 12.5px rgba(0, 0, 0, 0.1),
+				0 22.3px 22.3px rgba(0, 0, 0, 0.119),
+				0 41.8px 41.8px rgba(0, 0, 0, 0.144),
+				0 100px 100px rgba(0, 0, 0, 0.2)
+			;
+
+			background-color: var(--white);
+			padding: 35px;
+		}
+
+		.demo_title{
+			color: var(--black);
+			display: inline-block;
+		}
+		.demo_title:before{
+			content: '[';
+		}
+		.demo_title:after{
+			content: ']';
+		}
+
+
+	/***** Sections *****/
+		section{
+			outline: 5px dashed var(--primary_color);
+			padding:35px 35px;
+			margin: 0 0 35px;
+		}
+
+
+	/***** Code Element *****/
+		code{
+			color: var(--green);
+			background-color: var(--grey);
+			/*background: linear-gradient(90deg, var(--green) 1px, var(--green) 2px, var(--grey) 15px, var(--grey) 100%);*/
+
+			font-family: monospace;
+			font-size: 16px;
+			text-shadow: var(--text_glow_green);
+			display: inline-block;
+			position: relative;
+			padding: 25px 25px 10px 25px;
+			
+		}
+		code:after{
+			content:'<code/>';
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			display: block;
+			width: 100%;
+			padding: 2px 5px 2px 25px;
+			background-color: var(--green);
+			color: var(--grey);
+			font-size: 0.8em;
+		}
+
+		code.block{
+			width: 100%;
+			max-width: 850px;
+		}
+
+
+
+
+
+
+/******************************
+
+PLUGIN TESTING
+
+******************************/
+	
+	/***** CONTRAST  *****/
+		.contrast_test{
+			display: inline-block;
+			background-color: #000;
+			color: #666;
+			padding: 10px 25px;
+		}

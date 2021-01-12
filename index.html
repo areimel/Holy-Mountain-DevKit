@@ -1,76 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>test</title>
+	<title>DevKit | Holy Mountain Plugin Testing</title>
 	<meta charset="utf-8">
 	<meta name="description" content="test123">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="img/favicon.png">
 
 	<link rel="stylesheet" href="style.css">
 	
 </head>
 <body>
 
-	<nav>
-		<ul>
-			<li>
-				<a href="/test1">test1</a>
-			</li>
-			<li>
-				<a href="/test2">test2</a>
-			</li>
-			<li>
-				<a href="/test3">test3</a>
-			</li>
-			<li>
-				<a href="/test4">test4</a>
-			</li>
-		</ul>
-	</nav>
+	
 
-	<main>
-		<ul>
-			<li>
-				<img src="http://source.unsplash.com/ZooOY3QWkkQ/400x400">
-			</li>
-			<li>
-				<img src="https://source.unsplash.com/WLUHO9A_xik/400x400">
-			</li>
-			<li>
-				<a href="/test3">test3</a>
-			</li>
-			<li>
-				<a href="/test4">test4</a>
-			</li>
-		</ul>
+	<div class="project_metas">
+		<h1 class="demo_title">DEMO TEMPLATE</h1>
+		<h2>Dev: Alec Reimel</h2>
+	</div>
 
-		<div class="contrast_test" id="contrast_test_1">
-			<p>lorum ipsum dolor</p>
-		</div>
+	<div class="body_inner">
+		
+		<nav>
+			<p class="section_title">NAVIGATION</p>
+			<ul class="nolist">
+				<li>
+					<a href="/test1">test1</a>
+				</li>
+				<li>
+					<a href="/test2">test2</a>
+				</li>
+				<li>
+					<a href="/test3">test3</a>
+				</li>
+				<li>
+					<a href="/test4">test4</a>
+				</li>
+			</ul>
+		</nav>
 
-		<div class="contrast_test" id="contrast_test_2">
-			<p>lorum ipsum dolor</p>
-		</div>
-	</main>
+		<main>
 
-	<footer>
-		<ul>
-			<li>
-				<a href="/test1" tabindex="1">test1</a>
-			</li>
-			<li>
-				<a href="/test2">test2</a>
-			</li>
-			<li>
-				<a href="/test3">test3</a>
-			</li>
-			<li>
-				<a href="/test4">test4</a>
-			</li>
-		</ul>
-	</footer>
+			<section>
+				<p class="section_title">CODE</p>
+
+				<code>var HolyMountainDevKit = {};</code>
+				<br/><br/>
+				<code class="block">
+					/***** KEYSTROKE VARS *****/<br/>
+					var HolyMountain_keyboard = {};<br/>
+					HolyMountain_keyboard.enter_key	=	13;<br/>
+					HolyMountain_keyboard.space_key 	=	32;<br/>
+					HolyMountain_keyboard.ctrl_key 	=	17;<br/>
+					HolyMountain_keyboard.shift_key 	=	16;<br/>
+				</code>
+			</section>
+
+			<section>
+				<p class="section_title">IMAGES</p>
+				<ul>
+					<li>
+						<img src="http://source.unsplash.com/ZooOY3QWkkQ/100x100">
+					</li>
+					<li>
+						<img src="https://source.unsplash.com/WLUHO9A_xik/100x100">
+					</li>
+				</ul>
+			</section>
+			
+			<section>
+				<p class="section_title">TEXT CONTRAST</p>
+				<div class="contrast_test" id="contrast_test_1">
+					<p>Contrast Corrected</p>
+				</div>
+
+				<div class="contrast_test" id="contrast_test_2">
+					<p>Contrast Not Corrected</p>
+				</div>
+			</section>
+
+			
+			
+		</main>
+
+		<footer>
+			<ul class="nolist">
+				<li>
+					<a href="/test1" tabindex="1">test1</a>
+				</li>
+				<li>
+					<a href="/test2">test2</a>
+				</li>
+				<li>
+					<a href="/test3">test3</a>
+				</li>
+				<li>
+					<a href="/test4">test4</a>
+				</li>
+			</ul>
+		</footer>
 
 
+
+	</div>
+	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="devkit.js"></script>
 	<script type="text/javascript" src="accessibility.js"></script>

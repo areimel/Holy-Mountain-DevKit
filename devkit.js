@@ -6,7 +6,8 @@ Holy Mountain | DevKit
 NOTES:
 	-	This is the main/base file for the Holy Mountain plugin suite.
 		This file should always be included when using this group of plugins, 
-		as it includes core functionality.
+		as it includes core functionality. As groups of functions increase
+		in size, they will be split off into their own JS files.
 
 CONTENTS:
 	-	INITITALIZATION
@@ -15,9 +16,42 @@ CONTENTS:
 	-	INSECURE CONTENT CHECKER
 	-	INLINE CSS SCANNER (WIP)
 
+SNIPPETS:
+	-	$(document).ready(function(){});
+
 
 *********************************************
 ********************************************/
+
+
+/********************************************
+
+GLOBAL FUNCTIONS & VARIABLES
+	- 	Functions required for higher level operations
+
+********************************************/
+
+	/***** URL PARAMETERs *****/
+		
+		var searchParams = new URLSearchParams(window.location.search);
+
+		//EXAMPLE: 	searchParams.has('hm_devkit') //true or false
+		//				var param = searchParams.get('hm_devkit'); //set as var
+
+	/***** URL PARAMETERs *****/
+
+
+	/***** GLOBAL VARS *****/
+		//Vars controlled by Params
+			var hm_devkit_on;
+
+	/***** KEYSTROKE VARS *****/
+		//Source: https://keycode.info/
+		var HolyMountain_keyboard = {};
+		HolyMountain_keyboard.enter_key	=	13;
+		HolyMountain_keyboard.space_key 	=	32;
+		HolyMountain_keyboard.ctrl_key 	=	17;
+		HolyMountain_keyboard.shift_key 	=	16;
 
 
 
@@ -28,6 +62,7 @@ INITITALIZATION
 		clicks, and custom console styling.
 
 ********************************************/
+
 	
 	/***** CONSOLE STYLING *****/
 
@@ -50,36 +85,104 @@ INITITALIZATION
 
 		//Set functions
 			$(document).ready(function(){
-				$.fn.hm_console_log = function(message) {
-					console.log('%c'+ message, HolyMountainDevKit.console_styling);
-				};
 
-				$.fn.hm_console_log_2 = function(message) {
-					console.log('%c'+ message, HolyMountainDevKit.console_styling_2);
-				};
+				//Check for URL Param or JS var 
+				//Use URL Param for production, use JS var for development
+				if(searchParams.has('hm_devkit') || hm_devkit == true){
+					$.fn.hm_console_log = function(message) {
+						console.log('%c'+ message, HolyMountainDevKit.console_styling);
+					};
 
-				var message = "---Holy Mountain DevKit initialized.---";
-				$('html').hm_console_log(message);
+					$.fn.hm_console_log_2 = function(message) {
+						console.log('%c'+ message, HolyMountainDevKit.console_styling_2);
+					};
+
+					var message = "---Holy Mountain DevKit initialized.---";
+					$('html').hm_console_log(message);
+				} else{
+					console.log('Holy Mountain DevKit is installed on this site.  Add "?hm_devkit=on" to the URL to access the DevKit.');
+				}
+
+				
 
 			});
 
-	/***** KEYSTROKES *****/
-		var HolyMountain_keyboard = {};
+	
 
-		HolyMountain_keyboard.enter_key = 13;
-
-
+	
 
 /********************************************
 
 MENU
 
 ********************************************/
+$(document).ready(function(){
+	/***** CODE *****/
+	var hm_menu_html = '\
+		<div id="hm_devkit_overlay menu_close"></div>\
+		\
+		<div id="hm_devkit_icon">\
+			<span></></span>\
+		</div>\
+		\
+		<div id="hm_devkit_menu">\
+			<div class="menu_close"></div>\
+			<div class="heading">Holy Mountain DevKit</div>\
+			<ul>\
+				<li class=>\
+					<input id="hm_devkit_insecure_content" type="checkbox"></input>\
+					<label for="hm_devkit_insecure_content">Highlight Insecure Conent</label>\
+				</li>\
+				<li class=>\
+					<input id="hm_devkit_meta_tags" type="checkbox"></input>\
+					<label for="hm_devkit_meta_tags">Show Meta Tags</label>\
+				</li>\
+				<li class=>\
+					<input id="hm_devkit_form_check" type="checkbox"></input>\
+					<label for="hm_devkit_form_check">Highlight Form Errors</label>\
+				</li>\
+				<li class=>\
+					<input id="hm_devkit_alt_tag_errors" type="checkbox"></input>\
+					<label for="hm_devkit_alt_tag_errors">Highlight Form Errors</label>\
+				</li>\
+			</ul>\
+		</div>\
+	';
+
+	var hm_menu_css = '\
+		<style>\
+			#hm_devkit_overlay{\
+				position: fixed;\
+				top: 0;\
+				left: 0;\
+				width: 100%;\
+				height: 100%;\
+				opacity: 0;\
+				pointer-events: none;\
+			}\
+			#hm_devkit_overlay.active{\
+				opacity: 1;\
+				pointer-events: auto;\
+			}\
+			\
+			#hm_devkit_menu{\
+				position: fixed;\
+				top: 50%;\
+				left: 50%;\
+				transform: translate3d(-50%,-50%,0);\
+				width: 100%;\
+				height: 100%;\
+				max-width: 800px;\
+				max-height: 600px;\
+			}\
+		</style>\
+	'
+	$("body").append(hm_menu_css);
+	$("body").append(hm_menu_html);
+
+	/***** FUNCTIONS *****/
+});
 	
-	/***** ICON *****/
-
-
-	/***** MODAL *****/
 
 
 
