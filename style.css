@@ -185,3 +185,131 @@ PLUGIN TESTING
 			color: #666;
 			padding: 10px 25px;
 		}
+
+
+
+/******************************
+
+DEVKIT MENU
+
+******************************/
+
+
+	/*****  *****/
+	#hm_devkit_overlay{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		pointer-events: none;
+	}
+	#hm_devkit_overlay.active{
+		opacity: 1;
+		pointer-events: auto;
+	}
+	
+	#hm_devkit_menu{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%,-50%,0);
+
+		width: 100%;
+		height: 100%;
+		max-width: 800px;
+		max-height: 600px;
+		
+		color: var(--green);
+		background-color: var(--grey);
+		font-family: monospace;
+		font-size: 16px;
+		text-shadow: var(--text_glow_green);
+
+		box-shadow:
+			0 2.8px 2.8px rgba(0, 0, 0, 0.056),
+			0 6.7px 6.7px rgba(0, 0, 0, 0.081),
+			0 12.5px 12.5px rgba(0, 0, 0, 0.1),
+			0 22.3px 22.3px rgba(0, 0, 0, 0.119),
+			0 41.8px 41.8px rgba(0, 0, 0, 0.144),
+			0 100px 100px rgba(0, 0, 0, 0.2)
+		;
+	}
+
+
+	/***** Heading *****/
+		#hm_devkit_menu .heading{
+			display: block;
+			width: 100%;
+			padding: 10px 25px;
+			background-color: var(--green);
+			color: var(--grey);
+			font-size: 1.5em;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+	/***** Menu *****/
+		#hm_devkit_menu .menu_item_list{
+			list-style: none;
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			padding:  15px 15px;
+		}
+		#hm_devkit_menu .menu_item{
+			border: dashed 2px var(--green);
+			background: none;
+			display: inline-block;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			width: 30%;
+			padding: 10px 15px;
+			position: relative;
+			cursor: pointer;
+		}
+		#hm_devkit_menu .menu_item:hover{
+			border: solid  2px var(--green);
+			background: var(--green);
+			color: var(--grey);
+		}
+
+
+		#hm_devkit_menu .menu_item input{
+			opacity: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
+		#hm_devkit_menu .menu_item .custom_checkbox{
+			width: 25px;
+			height: 25px;
+			border: solid 3px  var(--green);
+			background-color: transparent;
+			cursor: pointer;
+		}
+		#hm_devkit_menu .menu_item:hover .custom_checkbox{
+			border: solid 3px  var(--grey);
+			background-color: var(--grey);
+		}
+
+		#hm_devkit_menu .menu_item input:checked + .custom_checkbox{
+			background-color: var(--green);
+			border: solid 3px  var(--green);
+		}
+		#hm_devkit_menu .menu_item:hover input:checked + .custom_checkbox{
+			background-color: var(--green);
+			border: solid 3px  var(--grey);
+		}
+
+		
+
+		#hm_devkit_menu .menu_item label{
+			padding-left: 25px;
+			width: calc(100% - 25px);
+			cursor: pointer;
+		}

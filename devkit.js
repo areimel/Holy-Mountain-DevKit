@@ -17,7 +17,8 @@ CONTENTS:
 	-	INLINE CSS SCANNER (WIP)
 
 SNIPPETS:
-	-	$(document).ready(function(){});
+	-	$(document).ready(function(){});		//Document Ready
+	-	$(window).load(function(){});		//Everything loaded
 
 
 *********************************************
@@ -127,22 +128,39 @@ $(document).ready(function(){
 		\
 		<div id="hm_devkit_menu">\
 			<div class="menu_close"></div>\
-			<div class="heading">Holy Mountain DevKit</div>\
-			<ul>\
-				<li class=>\
+			<div class="heading">\
+				<span>Holy Mountain DevKit</span>\
+				<div class="close">[CLOSE]</div>\
+			</div>\
+			<ul class="menu_item_list">\
+				<li class="menu_item">\
 					<input id="hm_devkit_insecure_content" type="checkbox"></input>\
-					<label for="hm_devkit_insecure_content">Highlight Insecure Conent</label>\
+					<div class="custom_checkbox"></div>\
+					<label for="hm_devkit_insecure_content">Highlight Insecure Content</label>\
 				</li>\
-				<li class=>\
+				<li class="menu_item">\
 					<input id="hm_devkit_meta_tags" type="checkbox"></input>\
+					<div class="custom_checkbox"></div>\
 					<label for="hm_devkit_meta_tags">Show Meta Tags</label>\
 				</li>\
-				<li class=>\
+				<li class="menu_item">\
 					<input id="hm_devkit_form_check" type="checkbox"></input>\
+					<div class="custom_checkbox"></div>\
 					<label for="hm_devkit_form_check">Highlight Form Errors</label>\
 				</li>\
-				<li class=>\
+				<li class="menu_item">\
 					<input id="hm_devkit_alt_tag_errors" type="checkbox"></input>\
+					<div class="custom_checkbox"></div>\
+					<label for="hm_devkit_alt_tag_errors">Highlight Form Errors</label>\
+				</li>\
+				<li class="menu_item">\
+					<input id="hm_devkit_alt_tag_errors" type="checkbox"></input>\
+					<div class="custom_checkbox"></div>\
+					<label for="hm_devkit_alt_tag_errors">Highlight Form Errors</label>\
+				</li>\
+				<li class="menu_item">\
+					<input id="hm_devkit_alt_tag_errors" type="checkbox"></input>\
+					<div class="custom_checkbox"></div>\
 					<label for="hm_devkit_alt_tag_errors">Highlight Form Errors</label>\
 				</li>\
 			</ul>\
