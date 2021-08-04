@@ -130,9 +130,14 @@ $(document).ready(function(){
 			<div class="menu_close"></div>\
 			<div class="heading">\
 				<span>Holy Mountain DevKit</span>\
-				<div class="close">[CLOSE]</div>\
+				<div class="close">CLOSE</div>\
 			</div>\
 			<ul class="menu_item_list">\
+				<li class="menu_item">\
+					<input id="hm_devkit_alt_tag_errors" type="checkbox"></input>\
+					<div class="custom_checkbox"></div>\
+					<label for="hm_devkit_alt_tag_errors">Highlight Passive Fixes</label>\
+				</li>\
 				<li class="menu_item">\
 					<input id="hm_devkit_insecure_content" type="checkbox"></input>\
 					<div class="custom_checkbox"></div>\
@@ -151,54 +156,44 @@ $(document).ready(function(){
 				<li class="menu_item">\
 					<input id="hm_devkit_alt_tag_errors" type="checkbox"></input>\
 					<div class="custom_checkbox"></div>\
-					<label for="hm_devkit_alt_tag_errors">Highlight Form Errors</label>\
+					<label for="hm_devkit_alt_tag_errors">Highlight Image Issue</label>\
 				</li>\
 				<li class="menu_item">\
 					<input id="hm_devkit_alt_tag_errors" type="checkbox"></input>\
 					<div class="custom_checkbox"></div>\
-					<label for="hm_devkit_alt_tag_errors">Highlight Form Errors</label>\
+					<label for="hm_devkit_alt_tag_errors">Mobile Reach Overlay</label>\
 				</li>\
 				<li class="menu_item">\
 					<input id="hm_devkit_alt_tag_errors" type="checkbox"></input>\
 					<div class="custom_checkbox"></div>\
-					<label for="hm_devkit_alt_tag_errors">Highlight Form Errors</label>\
+					<label for="hm_devkit_alt_tag_errors">Highlight Contrast Correction</label>\
 				</li>\
 			</ul>\
+			<div class="credit">\
+				<span>Planet Caravan Studios</span>\
+			</div>\
 		</div>\
 	';
 
-	var hm_menu_css = '\
-		<style>\
-			#hm_devkit_overlay{\
-				position: fixed;\
-				top: 0;\
-				left: 0;\
-				width: 100%;\
-				height: 100%;\
-				opacity: 0;\
-				pointer-events: none;\
-			}\
-			#hm_devkit_overlay.active{\
-				opacity: 1;\
-				pointer-events: auto;\
-			}\
-			\
-			#hm_devkit_menu{\
-				position: fixed;\
-				top: 50%;\
-				left: 50%;\
-				transform: translate3d(-50%,-50%,0);\
-				width: 100%;\
-				height: 100%;\
-				max-width: 800px;\
-				max-height: 600px;\
-			}\
-		</style>\
-	'
+	var hm_menu_css;
 	$("body").append(hm_menu_css);
 	$("body").append(hm_menu_html);
 
 	/***** FUNCTIONS *****/
+
+		/***** Open *****/
+			$("#hm_devkit_icon").click(function(){
+				if($("#hm_devkit_menu").hasClass("active")){
+					$("#hm_devkit_overlay").addClass("active");
+					$("#hm_devkit_menu").addClass("active");
+				}
+				
+			});
+
+			$("#hm_devkit_overlay").addClass("active");
+			$("#hm_devkit_menu").addClass("active");
+
+		/***** Close *****/
 });
 	
 

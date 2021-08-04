@@ -3,6 +3,9 @@
 GENERAL
 
 ******************************/
+	
+	/***** CharSet *****/
+	@charset "utf-8";
 
 
 	/***** Box-Size Reset - global border-box *****/
@@ -121,9 +124,13 @@ DEMO STYLING
 		}
 		.demo_title:before{
 			content: '[';
+			position: relative;
+			top:-2px;
 		}
 		.demo_title:after{
 			content: ']';
+			position: relative;
+			top:-2px;
 		}
 
 
@@ -235,6 +242,13 @@ DEVKIT MENU
 			0 41.8px 41.8px rgba(0, 0, 0, 0.144),
 			0 100px 100px rgba(0, 0, 0, 0.2)
 		;
+
+		opacity: 0;
+		pointer-events: none;
+	}
+	#hm_devkit_menu.active{
+		opacity: 1;
+		pointer-events: auto;
 	}
 
 
@@ -249,6 +263,35 @@ DEVKIT MENU
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+		}
+
+	/***** Heading *****/
+		#hm_devkit_menu .close{
+			cursor: pointer;
+			background-color: transparent;
+			color: var(--black);
+			padding: 5px;
+		}
+		#hm_devkit_menu .close:hover{
+			cursor: pointer;
+			background-color: var(--black);
+			color: var(--green);
+		}
+		#hm_devkit_menu .close::before{
+			content: '[';
+			position: relative;
+			top: -2px;
+		}
+		#hm_devkit_menu .close::after{
+			content: ']';
+			position: relative;
+			top: -2px;
+		}
+
+	/***** Credit *****/
+		#hm_devkit_menu .credit{
+			text-align: center;
+			padding: 5px;
 		}
 
 	/***** Menu *****/
@@ -271,6 +314,7 @@ DEVKIT MENU
 			position: relative;
 			cursor: pointer;
 		}
+
 		#hm_devkit_menu .menu_item:hover{
 			border: solid  2px var(--green);
 			background: var(--green);
@@ -281,9 +325,12 @@ DEVKIT MENU
 		#hm_devkit_menu .menu_item input{
 			opacity: 0;
 			position: absolute;
+			left:0;
+			top: 0;
 			width: 100%;
 			height: 100%;
 			cursor: pointer;
+			z-index: 10;
 		}
 		#hm_devkit_menu .menu_item .custom_checkbox{
 			width: 25px;
@@ -291,19 +338,32 @@ DEVKIT MENU
 			border: solid 3px  var(--green);
 			background-color: transparent;
 			cursor: pointer;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
 		}
+		#hm_devkit_menu .menu_item .custom_checkbox::before{
+			content: '✖';
+			position: relative;
+			top: -1px;
+			opacity: 0;
+			pointer-events: none;
+		}
+
+
 		#hm_devkit_menu .menu_item:hover .custom_checkbox{
 			border: solid 3px  var(--grey);
 			background-color: var(--grey);
 		}
 
-		#hm_devkit_menu .menu_item input:checked + .custom_checkbox{
-			background-color: var(--green);
-			border: solid 3px  var(--green);
+		#hm_devkit_menu .menu_item input:checked + .custom_checkbox{}
+		#hm_devkit_menu .menu_item input:checked + .custom_checkbox:before{
+			opacity: 1;
 		}
 		#hm_devkit_menu .menu_item:hover input:checked + .custom_checkbox{
-			background-color: var(--green);
-			border: solid 3px  var(--grey);
+			color: var(--green);
 		}
 
 		
