@@ -15,7 +15,7 @@ INITITALIZATION
 ********************************************/
 $(document).ready(function(){
 	var message = "---Holy Mountain - Accessibility module loaded.---";
-	$('html').hm_console_log(message);
+	console.log(message);
 });
 
 
@@ -34,7 +34,7 @@ $(document).ready(function(){
 		}else{
 			
 			var message = 'HTML [title] Meta missing';
-			$('html').hm_console_log(message);
+			console.log(message);
 
 		}
 
@@ -44,12 +44,12 @@ $(document).ready(function(){
 		}else if ($("meta[name='description']").attr("description") == "" ) {
 			
 			var message = 'HTML [description] meta missing';
-			$('html').hm_console_log(message);
+			console.log(message);
 
 		}else{
 			
 			var message = 'HTML [description] meta missing';
-			$('html').hm_console_log(message);
+			console.log(message);
 
 		}
 
@@ -59,17 +59,17 @@ $(document).ready(function(){
 		}else if ($("meta[name='charset']").attr("charset") == "" ) {
 			
 			var message = "HTML [charset] meta missing";
-			$('html').hm_console_log(message);
+			console.log(message);
 
 		}else if ($("meta[name='charset']").attr("charset") != "UTF-8" || $("meta[name='charset']").attr("charset") != "utf-8" ) {
 			
 			var message = "HTML [charset] meta missing";
-			$('html').hm_console_log(message);
+			console.log(message);
 
 		}else{
 			
 			var message = "HTML [charset] meta missing";
-			$('html').hm_console_log(message);
+			console.log(message);
 
 		}
 
@@ -79,7 +79,7 @@ $(document).ready(function(){
 		}else{
 			
 			var message = "HTML [viewport] meta missing";
-			$('html').hm_console_log(message);
+			console.log(message);
 		}
 
 	/***** LANG ATTRIBUTE CHECK *****/
@@ -90,7 +90,7 @@ $(document).ready(function(){
 		}else{
 			
 			var message = "HTML [lang] attribute missing";
-			$('html').hm_console_log(message);
+			console.log(message);
 		}
 
 
@@ -114,30 +114,30 @@ $(document).ready(function(){
 					if ($(this).attr('method') != "") {
 						//do nothing
 					}else {
-						$(this).addClass('--hm_form_method_missing');
+						$(this).addClass('thorium_dev_form_method_missing');
 						
-						var message = 'Missing form method found. Search for "--hm_form_method_missing".';
-						$('html').hm_console_log(message);
+						var message = 'Missing form method found. Search for "thorium_dev_form_method_missing".';
+						console.log(message);
 					}
 
 				//action
 					if ($(this).attr('action') != "") {
 						//do nothing
 					}else {
-						$(this).addClass('--hm_form_action_missing');
+						$(this).addClass('thorium_dev_form_action_missing');
 						
-						var message = 'Missing form action found. Search for "--hm_form_action_missing".';
-						$('html').hm_console_log(message);
+						var message = 'Missing form action found. Search for "thorium_dev_form_action_missing".';
+						console.log(message);
 					}
 
 				//id
 					if ($(this).attr('id') != "") {
 						//do nothing
 					}else {
-						$(this).addClass('--hm_form_id_missing');
+						$(this).addClass('thorium_dev_form_id_missing');
 						
-						var message = 'Missing form ID found. Search for "--hm_form_id_missing".';
-						$('html').hm_console_log(message);
+						var message = 'Missing form ID found. Search for "thorium_dev_form_id_missing".';
+						console.log(message);
 					}
 			});
 
@@ -151,20 +151,20 @@ $(document).ready(function(){
 					if ($(this).attr('name') != "") {
 						//do nothing
 					}else {
-						$(this).addClass('--hm_input_name_missing');
+						$(this).addClass('thorium_dev_input_name_missing');
 						
-						var message = 'Missing form method found. Search for "--hm_input_name_missing".';
-						$('html').hm_console_log(message);
+						var message = 'Missing form method found. Search for "thorium_dev_input_name_missing".';
+						console.log(message);
 					}
 
 				//id
 					if ($(this).attr('id') != "") {
 						//do nothing
 					}else {
-						$(this).addClass('--hm_form_id_missing');
+						$(this).addClass('thorium_dev_form_id_missing');
 						
-						var message = 'Missing input ID found, likely missing label. Search for "--hm_form_id_missing".';
-						$('html').hm_console_log(message);
+						var message = 'Missing input ID found, likely missing label. Search for "thorium_dev_form_id_missing".';
+						console.log(message);
 					}
 			});
 
@@ -213,7 +213,7 @@ $(document).ready(function(){
 		//If img src contains the alt text
 		if (img_src.toLowerCase().indexOf(img_alt) >= 0){
 			$(this).attr("alt","");
-			$(this).addClass('--hm_alt_tag_filename');
+			$(this).addClass('thorium_dev_alt_tag_filename');
 			//console.log("alt tag filename success");
 		}
 
@@ -223,20 +223,20 @@ $(document).ready(function(){
 			|| img_alt.toLowerCase().indexOf(".png") >= 0
 			|| img_alt.toLowerCase().indexOf(".gif") >= 0){
 			$(this).attr("alt","");
-			$(this).addClass('--hm_alt_tag_filename');
+			$(this).addClass('thorium_dev_alt_tag_filename');
 			//console.log("alt tag filename success");
 		}
 
 		//if img alt tag contains underscore
 		if (img_src.toLowerCase().indexOf("_") >= 0){
 			$(this).attr("alt","");
-			$(this).addClass('--hm_alt_tag_filename');
+			$(this).addClass('thorium_dev_alt_tag_filename');
 			//console.log("alt tag filename success");
 		}
 
 		/*if (img_src.toLowerCase().indexOf("-") >= 0){
 			$(this).attr("alt","");
-			$(this).addClass('--hm_alt_tag_filename');
+			$(this).addClass('thorium_dev_alt_tag_filename');
 			//console.log("alt tag filename success");
 		}*/
 	});
@@ -245,10 +245,10 @@ $(document).ready(function(){
 	$('img:not(img[alt])').each(function(){
 		var img_src = $(this).attr('src');
 		$(this).attr('alt', '');
-		$(this).addClass('--hm_alt_tag_missing');
+		$(this).addClass('thorium_dev_alt_tag_missing');
 		
-		var message = 'Missing alt tag found - src: '+img_src+'. Search for "--hm_alt_tag_missing".';
-		$('html').hm_console_log(message);
+		var message = 'Missing alt tag found - src: '+img_src+'. Search for "thorium_dev_alt_tag_missing".';
+		console.log(message);
 	});
 
 	//Corrects alt tags containing just a space
@@ -274,9 +274,9 @@ LINK FORMATTERS
 	$(document).ready(function(){
 
 		$('a[tabindex]').each(function(){
-			$(this).addClass('--hm_manual_tab_index');
-			var message = "Manual tab-index on page. You should double check it. Search for '--hm_manual_tab_index'.";
-			$('html').hm_console_log(message);
+			$(this).addClass('thorium_dev_manual_tab_index');
+			var message = "Manual tab-index on page. You should double check it. Search for 'thorium_dev_manual_tab_index'.";
+			console.log(message);
 		});
 
 		$('a:not(a[href])').each(function(){
